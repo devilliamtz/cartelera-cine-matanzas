@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Cartelera semanal del Centro Provincial de Cine de Matanzas. Del 21 al 26 de julio de 2026. Cine para la comunidad.">
+<meta name="theme-color" content="#c9772f">
+<title>Cartelera · Centro Provincial de Cine de Matanzas</title>
+<style>
+  :root{
+    --naranja:#ff6600;
+    --calido:#c9772f;
+    --calido2:#b5651d;
+    --turquesa:#1aa39a;
+    --turquesa-claro:#40e0d0;
+    --tinta:#1a1a1a;
+    --papel:#f4efe6;
+    --blanco:#ffffff;
+    /* fondo "vitrina" para el póster (también lo usa el <img>) */
+    --vitrina:radial-gradient(120% 90% at 50% 0%, #3a2415 0%, #1d130c 55%, #120c08 100%);
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{-webkit-text-size-adjust:100%}
+  body{
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    background:var(--papel);color:var(--tinta);line-height:1.5;font-size:16px;padding:10px;
+  }
+  .wrap{max-width:760px;margin:0 auto}
+
+  /* Encabezado con logo CPC (reducido) */
+  header{
+    background:linear-gradient(135deg,var(--calido),var(--calido2));
+    color:#fff;border-radius:14px;padding:18px 16px;text-align:center;
+    margin-bottom:14px;box-shadow:0 4px 14px rgba(0,0,0,.18);
+  }
+  .logo-cpc{background:#fff;border-radius:12px;padding:6px;display:inline-block;margin-bottom:10px;box-shadow:0 2px 6px rgba(0,0,0,.25)}
+  .logo-cpc img{display:block;width:auto;height:52px}
+  header h1{font-size:1.25rem;line-height:1.25;font-weight:800}
+  header p{font-size:.9rem;opacity:.95;margin-top:4px}
+
+  /* Título */
+  .titulo{
+    background:#fff;border-radius:14px;text-align:center;padding:18px 16px;margin-bottom:14px;
+    border-left:4px solid var(--turquesa-claro);border-right:4px solid var(--turquesa-claro);
+    box-shadow:0 2px 8px rgba(0,0,0,.08);
+  }
+  .titulo h2{font-size:1.5rem;font-weight:800}
+  .titulo .lema{color:var(--turquesa);font-weight:700;font-size:.95rem;margin-top:6px}
+  .titulo .fechas{color:var(--calido2);font-weight:700;font-size:.9rem;margin-top:4px}
+
+  /* Tarjetas */
+  .grid{display:grid;gap:14px}
+  .card{background:#fff;border-radius:14px;overflow:hidden;box-shadow:0 2px 8px rgba(0,0,0,.1);border-top:4px solid var(--calido)}
+  .card.alt{border-top-color:var(--turquesa-claro)}
+
+  /* PÓSTER: contenedor tipo vitrina + capa de respaldo detrás */
+  .poster{
+    position:relative;height:240px;background:var(--vitrina);
+    display:flex;flex-direction:column;align-items:center;justify-content:center;
+    text-align:center;color:#d8c7b6;padding:12px;gap:6px;overflow:hidden;
+  }
+  .poster .emoji{font-size:2.6rem;line-height:1;opacity:.85}
+  .poster .ptxt{font-size:.8rem;font-weight:700;letter-spacing:.3px}
+  /* el <img> va ENCIMA; su fondo = misma vitrina para tapar el respaldo cuando carga */
+  .poster-img{
+    position:absolute;inset:0;width:100%;height:100%;object-fit:contain;
+    background:var(--vitrina);padding:10px;
+    filter:drop-shadow(0 6px 14px rgba(0,0,0,.55));
+  }
+
+  .body{padding:14px 16px 16px}
+  .meta{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-bottom:10px}
+  .day{background:var(--calido);color:#fff;font-weight:800;font-size:.85rem;padding:6px 12px;border-radius:14px}
+  .card.alt .day{background:var(--turquesa-claro);color:var(--tinta)}
+  .aud{background:#e9c46a;color:var(--tinta);font-weight:700;font-size:.75rem;padding:4px 10px;border-radius:12px}
+  .body h3{font-size:1.2rem;font-weight:800;margin-bottom:10px}
+  .facts{list-style:none;display:grid;gap:7px}
+  .facts li{display:flex;gap:8px;font-size:.92rem}
+  .facts .ic{flex:0 0 20px;text-align:center}
+  .desc{margin-top:11px;background:var(--papel);border-left:3px solid var(--turquesa-claro);border-radius:6px;padding:9px 11px;font-size:.9rem;color:#333}
+
+  /* Info práctica (sin precios) */
+  .info{background:var(--tinta);color:#fff;border-radius:14px;padding:18px 16px;margin:16px 0}
+  .info h3{text-align:center;color:var(--turquesa-claro);font-size:1.15rem;margin-bottom:14px}
+  .info-grid{display:grid;gap:12px}
+  .info-item{background:rgba(255,255,255,.06);border-left:3px solid var(--calido);border-radius:8px;padding:12px}
+  .info-item h4{color:#e9a05a;font-size:.95rem;margin-bottom:5px}
+  .info-item p,.info-item a{font-size:.88rem;color:#fff;text-decoration:none}
+  .info-item a{color:var(--turquesa-claro)}
+
+  /* Botones (sin JS) */
+  .acciones{display:grid;gap:10px;margin:16px 0}
+  .btn{display:block;text-align:center;text-decoration:none;font-weight:800;font-size:.95rem;padding:14px 16px;border-radius:26px;min-height:48px;box-shadow:0 3px 10px rgba(0,0,0,.18)}
+  .btn-fb{background:#1877f2;color:#fff}
+  .btn-wa{background:#25d366;color:#063}
+  .btn-ta{background:var(--calido);color:#fff}
+
+  /* Pie con logo CMC (SVG inline, reducido) */
+  footer{background:#141414;color:#fff;border-radius:14px;padding:22px 16px;text-align:center;margin-top:16px}
+  .logo-cmc svg{width:64px;height:64px;display:block;margin:0 auto}
+  .apoyo{margin-top:14px;font-size:.9rem;opacity:.9}
+  .chips{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin-top:12px}
+  .chip{background:#fff;color:var(--tinta);font-weight:700;font-size:.8rem;padding:8px 14px;border-radius:10px}
+  .copy{margin-top:16px;font-size:.78rem;opacity:.75;line-height:1.5}
+
+  /* Tablets / pantallas grandes */
+  @media(min-width:640px){
+    body{padding:18px;font-size:17px}
+    .grid{grid-template-columns:repeat(2,1fr)}
+    .info-grid{grid-template-columns:repeat(2,1fr)}
+    .acciones{grid-template-columns:repeat(3,1fr)}
+    header h1{font-size:1.5rem}
+    .poster{height:300px}
+  }
+
+  @media print{
+    body{background:#fff;padding:0}
+    .acciones{display:none}
+    .card,.info{box-shadow:none;break-inside:avoid}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <!-- ENCABEZADO (logo CPC) -->
+  <header>
+    <span class="logo-cpc">
+      <img src="logo-cpc.png" alt="Logo del Centro Provincial de Cine de Matanzas" width="120" height="52">
+    </span>
+    <h1>Centro Provincial de Cine de Matanzas</h1>
+    <p>Ciudad de Matanzas · Cuba</p>
+  </header>
+
+  <!-- TÍTULO -->
+  <section class="titulo">
+    <h2>🎬 Cartelera · Julio 2026</h2>
+    <p class="lema">Cine para la comunidad: reflexión, identidad y cultura</p>
+    <p class="fechas"> Del 21 al 26 de julio</p>
+  </section>
+
+  <!-- PROGRAMACIÓN -->
+  <main class="grid">
+
+    <!-- MARTES 21 -->
+    <article class="card">
+      <div class="poster">
+        <span class="emoji">🎈</span><span class="ptxt">CARTEL · LILO &amp; STITCH</span>
+        <img class="poster-img" src="cartel-lilo-stitch.jpg" alt="Cartel de la película Lilo y Stitch" width="480" height="720" loading="lazy" decoding="async" onerror="this.style.display='none'">
+      </div>
+      <div class="body">
+        <div class="meta"><span class="day"> Mar 21</span><span class="aud">🧒 Infantil</span></div>
+        <h3>Matiné de Verano</h3>
+        <ul class="facts">
+          <li><span class="ic">🕙</span><span><b>10:00 AM</b></span></li>
+          <li><span class="ic">📍</span><span>Sala de Video del Centro Provincial de Cine</span></li>
+          <li><span class="ic">🧭</span><span>La Merced y San Ignacio, Pueblo Nuevo</span></li>
+        </ul>
+        <p class="desc">Animados variados. Filme: <strong>Lilo &amp; Stitch</strong>.</p>
+      </div>
+    </article>
+
+    <!-- MIÉRCOLES 22 -->
+    <article class="card alt">
+      <div class="poster">
+        <span class="emoji">🎞️</span><span class="ptxt">CARTEL · NORA (Cuba)</span>
+        <img class="poster-img" src="cartel-nora.jpg" alt="Cartel de la película cubana Nora" width="480" height="720" loading="lazy" decoding="async" onerror="this.style.display='none'">
+      </div>
+      <div class="body">
+        <div class="meta"><span class="day"> Mié 22</span><span class="aud">👥 Jóvenes y adultos</span></div>
+        <h3>Cine Móvil</h3>
+        <ul class="facts">
+          <li><span class="ic">🕗</span><span><b>8:00 PM</b></span></li>
+          <li><span class="ic">📍</span><span>Combinado de San Hipólito</span></li>
+          <li><span class="ic">🧭</span><span>Arrechabaleta, Versalles</span></li>
+        </ul>
+        <p class="desc">Proyección del filme cubano <strong>Nora</strong>.</p>
+      </div>
+    </article>
+
+    <!-- JUEVES 23 -->
+    <article class="card">
+      <div class="poster">
+        <span class="emoji">🎸</span><span class="ptxt">CARTEL · COCO</span>
+        <img class="poster-img" src="cartel-coco.jpg" alt="Cartel de la película Coco" width="480" height="720" loading="lazy" decoding="async" onerror="this.style.display='none'">
+      </div>
+      <div class="body">
+        <div class="meta"><span class="day"> Jue 23</span><span class="aud">🧒 Niños y jóvenes</span></div>
+        <h3>Fiesta Audiovisual</h3>
+        <ul class="facts">
+          <li><span class="ic">🕕</span><span><b>6:00 PM</b></span></li>
+          <li><span class="ic">📍</span><span>Sala de Video Charlie Chaplin</span></li>
+          <li><span class="ic">🧭</span><span>San Diego, esq. Santa Rita, Pueblo Nuevo</span></li>
+        </ul>
+        <p class="desc">Proyección del filme <strong>Coco</strong> y videoclips musicales.</p>
+      </div>
+    </article>
+
+    <!-- VIERNES 24 (sin cartel: respaldo visual) -->
+    <article class="card alt">
+      <div class="poster">
+        <span class="emoji">🎓</span><span class="ptxt">ACTIVIDAD ESPECIAL</span>
+      </div>
+      <div class="body">
+        <div class="meta"><span class="day"> Vie 24</span><span class="aud">🎒 Adolescentes</span></div>
+        <h3>Mirando el Futuro</h3>
+        <ul class="facts">
+          <li><span class="ic">🕑</span><span><b>2:00 PM</b></span></li>
+          <li><span class="ic">📍</span><span>Escuela de Formación Integral</span></li>
+          <li><span class="ic">🧭</span><span>La Jarcia, Reparto Camilo Cienfuegos</span></li>
+        </ul>
+        <!-- EDITAR: ajusta esta descripción a la actividad real -->
+        <p class="desc">Espacio de reflexión y creación audiovisual para adolescentes.</p>
+      </div>
+    </article>
+
+    <!-- SÁBADO 25 (sin cartel: respaldo visual) -->
+    <article class="card">
+      <div class="poster">
+        <span class="emoji">🎬</span><span class="ptxt">CORTOS Y VIDEOCLIPS</span>
+      </div>
+      <div class="body">
+        <div class="meta"><span class="day"> Sáb 25</span><span class="aud">🧒 Niños y jóvenes</span></div>
+        <h3>Fiesta Audiovisual</h3>
+        <ul class="facts">
+          <li><span class="ic">🕕</span><span><b>6:00 PM</b></span></li>
+          <li><span class="ic">📍</span><span>Sala de Video Charlie Chaplin</span></li>
+          <li><span class="ic">🧭</span><span>San Diego, esq. Santa Rita, Pueblo Nuevo</span></li>
+        </ul>
+        <p class="desc">Proyección de cortometrajes y videoclips musicales.</p>
+      </div>
+    </article>
+
+    <!-- DOMINGO 26 (reusa cartel de Nora) -->
+    <article class="card alt">
+      <div class="poster">
+        <span class="emoji">🎞️</span><span class="ptxt">CARTEL · NORA (Cuba)</span>
+        <img class="poster-img" src="cartel-nora.jpg" alt="Cartel de la película cubana Nora" width="480" height="720" loading="lazy" decoding="async" onerror="this.style.display='none'">
+      </div>
+      <div class="body">
+        <div class="meta"><span class="day"> Dom 26</span><span class="aud">👥 Jóvenes y adultos</span></div>
+        <h3>Cine Móvil</h3>
+        <ul class="facts">
+          <li><span class="ic">🕗</span><span><b>8:00 PM</b></span></li>
+          <li><span class="ic">📍</span><span>Parque de la Iglesia de San Gerónimo</span></li>
+          <li><span class="ic">🧭</span><span>Callejón de la Sacristía, Pueblo Nuevo</span></li>
+        </ul>
+        <p class="desc">Proyección del filme cubano <strong>Nora</strong>.</p>
+      </div>
+    </article>
+
+  </main>
+
+  <!-- INFO PRÁCTICA (sin precios) -->
+  <section class="info">
+    <h3>📌 Información práctica</h3>
+    <div class="info-grid">
+      <div class="info-item"><h4>📍 Sedes</h4><p>Centro Provincial de Cine y barrios de Pueblo Nuevo, Versalles y La Jarcia.</p></div>
+      <div class="info-item"><h4>📞 Contacto</h4><p>📱 +53 XXX XXX XXX<br>🌐 <a href="https://www.facebook.com/CineMatanzasConecta" target="_blank" rel="noopener">Cine Matanzas Conecta</a></p></div>
+      <div class="info-item"><h4>🌦️ Clima</h4><p>Las funciones al aire libre pueden cambiar de sede según el tiempo. Consulta nuestras redes.</p></div>
+      <div class="info-item"><h4>🤝 Cine comunitario</h4><p>Un proyecto para llevar el cine a cada barrio y fortalecer la identidad cultural matancera.</p></div>
+    </div>
+  </section>
+
+  <!-- ACCIONES (sin JS) -->
+  <div class="acciones">
+    <a class="btn btn-fb" href="https://www.facebook.com/CineMatanzasConecta" target="_blank" rel="noopener">📘 Síguenos</a>
+    <a class="btn btn-wa" href="https://wa.me/?text=%F0%9F%8E%AC%20Cartelera%20del%20Centro%20Provincial%20de%20Cine%20de%20Matanzas%20%C2%B7%2021%E2%80%9326%20jul%202026.%20M%C3%A1s%20info%3A%20https%3A%2F%2Fdevilliamtz.github.io%2Fcartelera-cine-matanzas%2F" target="_blank" rel="noopener">📲 Compartir</a>
+    <a class="btn btn-ta" href="https://wa.me/?text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20los%20talleres%20de%20cine%20comunitario." target="_blank" rel="noopener">🎓 Talleres</a>
+  </div>
+
+  <!-- PIE (logo CMC, SVG inline) -->
+  <footer>
+    <span class="logo-cmc" role="img" aria-label="Cine Matanzas Conecta">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+        <circle cx="100" cy="100" r="95" fill="none" stroke="#ffffff" stroke-width="8"/>
+        <circle cx="100" cy="100" r="88" fill="#000000"/>
+        <polygon points="82,48 82,92 128,70" fill="#ff6600"/>
+        <text x="100" y="128" text-anchor="middle" fill="#ffffff" font-family="Arial,Helvetica,sans-serif" font-size="19" font-weight="bold">CINE CONECTA</text>
+        <text x="100" y="152" text-anchor="middle" fill="#ffffff" font-family="Arial,Helvetica,sans-serif" font-size="19" font-weight="bold">MATANZAS</text>
+      </svg>
+    </span>
+    <p class="apoyo">Apoyado por</p>
+    <div class="chips">
+      <span class="chip">🏛️ Dirección Provincial de Cultura</span>
+      <span class="chip">🎥 ICAIC</span>
+    </div>
+    <p class="copy">© 2026 Centro Provincial de Cine de Matanzas<br>Cine para la comunidad: reflexión, identidad y cultura</p>
+  </footer>
+
+</div>
+</body>
+</html>
