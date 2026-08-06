@@ -3,36 +3,25 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Cartelera semanal del Centro Provincial de Cine de Matanzas. Del 21 al 26 de julio de 2026. Cine para la comunidad.">
+<meta name="description" content="Cartelera semanal del Centro Provincial de Cine de Matanzas. Del 5 al 12 de agosto de 2026. Cine para la comunidad.">
 <meta name="theme-color" content="#c9772f">
-<link rel="canonical" href="https://devilliamtz.github.io/cartelera-cine-matanzas/">
 <title>Cartelera · Centro Provincial de Cine de Matanzas</title>
+
 <!-- ===== Vista previa al compartir (Open Graph + Twitter) ===== -->
 <meta property="og:type" content="website">
 <meta property="og:locale" content="es_ES">
 <meta property="og:site_name" content="Centro Provincial de Cine de Matanzas">
 <meta property="og:url" content="https://devilliamtz.github.io/cartelera-cine-matanzas/">
-<meta property="og:title" content="Cartelera 21–26 de julio · Cine en los barrios de Matanzas">
-<meta property="og:description" content="Matiné, cine móvil y fiestas audiovisuales en Pueblo Nuevo, Versalles y La Jarcia. Mira la programación completa de la semana.">
-<!-- Imagen de la vista previa (URL absoluta). Para cambiarla, sustituye el nombre del archivo: -->
-<meta property="og:image" content="https://devilliamtz.github.io/cartelera-cine-matanzas/og-banner.jpg">
-<meta property="og:image:secure_url" content="https://devilliamtz.github.io/cartelera-cine-matanzas/og-banner.jpg">
-<meta property="og:image:type" content="image/jpeg">
-<meta property="og:image:width" content="1200">
-<meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="Cartelera de cine del Centro Provincial de Cine de Matanzas · 21–26 de julio">
-<!-- Imagen alterna (póster vertical), por si alguna red usa la segunda og:image -->
-<meta property="og:image" content="https://devilliamtz.github.io/cartelera-cine-matanzas/cartel-nora.jpg">
-<meta property="og:image:secure_url" content="https://devilliamtz.github.io/cartelera-cine-matanzas/cartel-nora.jpg">
-<meta property="og:image:type" content="image/jpeg">
-<meta property="og:image:width" content="480">
-<meta property="og:image:height" content="720">
-<meta property="og:image:alt" content="Cartelera de cine del Centro Provincial de Cine de Matanzas">
-<!-- Twitter / X usa estas: -->
+<meta property="og:title" content="Cartelera 5–12 de agosto · Cine en los barrios de Matanzas">
+<meta property="og:description" content="Cine móvil, cine infantil y fiestas audiovisuales en El Cocal, Naranjal, Pueblo Nuevo y La Jarcia. Mira la programación completa.">
+<!-- Banner de vista previa (súbelo como portada-og.jpg a la raíz del repo) -->
+<meta property="og:image" content="https://devilliamtz.github.io/cartelera-cine-matanzas/portada-og.jpg">
+<meta property="og:image:alt" content="Cartelera de Cine Matanzas · Agosto 2026 · Del 5 al 12">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Cartelera 21–26 de julio · Cine en los barrios de Matanzas">
-<meta name="twitter:description" content="Matiné, cine móvil y fiestas audiovisuales en Pueblo Nuevo, Versalles y La Jarcia.">
-<meta name="twitter:image" content="https://devilliamtz.github.io/cartelera-cine-matanzas/og-banner.jpg">
+<meta name="twitter:title" content="Cartelera 5–12 de agosto · Cine en los barrios de Matanzas">
+<meta name="twitter:description" content="Cine móvil, cine infantil y fiestas audiovisuales en El Cocal, Naranjal, Pueblo Nuevo y La Jarcia.">
+<meta name="twitter:image" content="https://devilliamtz.github.io/cartelera-cine-matanzas/portada-og.jpg">
+
 <style>
   :root{
     --naranja:#ff6600;
@@ -43,7 +32,6 @@
     --tinta:#1a1a1a;
     --papel:#f4efe6;
     --blanco:#ffffff;
-    /* fondo "vitrina" para el póster (también lo usa el <img>) */
     --vitrina:radial-gradient(120% 90% at 50% 0%, #3a2415 0%, #1d130c 55%, #120c08 100%);
   }
   *{margin:0;padding:0;box-sizing:border-box}
@@ -54,7 +42,6 @@
   }
   .wrap{max-width:760px;margin:0 auto}
 
-  /* Encabezado con logo CPC (reducido) */
   header{
     background:linear-gradient(135deg,var(--calido),var(--calido2));
     color:#fff;border-radius:14px;padding:18px 16px;text-align:center;
@@ -65,7 +52,6 @@
   header h1{font-size:1.25rem;line-height:1.25;font-weight:800}
   header p{font-size:.9rem;opacity:.95;margin-top:4px}
 
-  /* Título */
   .titulo{
     background:#fff;border-radius:14px;text-align:center;padding:18px 16px;margin-bottom:14px;
     border-left:4px solid var(--turquesa-claro);border-right:4px solid var(--turquesa-claro);
@@ -75,12 +61,10 @@
   .titulo .lema{color:var(--turquesa);font-weight:700;font-size:.95rem;margin-top:6px}
   .titulo .fechas{color:var(--calido2);font-weight:700;font-size:.9rem;margin-top:4px}
 
-  /* Tarjetas */
   .grid{display:grid;gap:14px}
   .card{background:#fff;border-radius:14px;overflow:hidden;box-shadow:0 2px 8px rgba(0,0,0,.1);border-top:4px solid var(--calido)}
   .card.alt{border-top-color:var(--turquesa-claro)}
 
-  /* PÓSTER: contenedor tipo vitrina + capa de respaldo detrás */
   .poster{
     position:relative;height:240px;background:var(--vitrina);
     display:flex;flex-direction:column;align-items:center;justify-content:center;
@@ -88,12 +72,14 @@
   }
   .poster .emoji{font-size:2.6rem;line-height:1;opacity:.85}
   .poster .ptxt{font-size:.8rem;font-weight:700;letter-spacing:.3px}
-  /* el <img> va ENCIMA; su fondo = misma vitrina para tapar el respaldo cuando carga */
   .poster-img{
     position:absolute;inset:0;width:100%;height:100%;object-fit:contain;
     background:var(--vitrina);padding:10px;
     filter:drop-shadow(0 6px 14px rgba(0,0,0,.55));
   }
+  /* Doble cartel (dos filmes en la misma función) */
+  .poster.doble .poster-img{inset:0 auto 0 0;width:50%;padding:8px}
+  .poster.doble .poster-img + .poster-img{inset:0 0 0 auto}
 
   .body{padding:14px 16px 16px}
   .meta{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-bottom:10px}
@@ -106,7 +92,6 @@
   .facts .ic{flex:0 0 20px;text-align:center}
   .desc{margin-top:11px;background:var(--papel);border-left:3px solid var(--turquesa-claro);border-radius:6px;padding:9px 11px;font-size:.9rem;color:#333}
 
-  /* Info práctica (sin precios) */
   .info{background:var(--tinta);color:#fff;border-radius:14px;padding:18px 16px;margin:16px 0}
   .info h3{text-align:center;color:var(--turquesa-claro);font-size:1.15rem;margin-bottom:14px}
   .info-grid{display:grid;gap:12px}
@@ -115,14 +100,12 @@
   .info-item p,.info-item a{font-size:.88rem;color:#fff;text-decoration:none}
   .info-item a{color:var(--turquesa-claro)}
 
-  /* Botones (sin JS) */
   .acciones{display:grid;gap:10px;margin:16px 0}
   .btn{display:block;text-align:center;text-decoration:none;font-weight:800;font-size:.95rem;padding:14px 16px;border-radius:26px;min-height:48px;box-shadow:0 3px 10px rgba(0,0,0,.18)}
   .btn-fb{background:#1877f2;color:#fff}
   .btn-wa{background:#25d366;color:#063}
   .btn-ta{background:var(--calido);color:#fff}
 
-  /* Pie con logo CMC (SVG inline, reducido) */
   footer{background:#141414;color:#fff;border-radius:14px;padding:22px 16px;text-align:center;margin-top:16px}
   .logo-cmc svg{width:64px;height:64px;display:block;margin:0 auto}
   .apoyo{margin-top:14px;font-size:.9rem;opacity:.9}
@@ -130,7 +113,6 @@
   .chip{background:#fff;color:var(--tinta);font-weight:700;font-size:.8rem;padding:8px 14px;border-radius:10px}
   .copy{margin-top:16px;font-size:.78rem;opacity:.75;line-height:1.5}
 
-  /* Tablets / pantallas grandes */
   @media(min-width:640px){
     body{padding:18px;font-size:17px}
     .grid{grid-template-columns:repeat(2,1fr)}
@@ -150,7 +132,6 @@
 <body>
 <div class="wrap">
 
-  <!-- ENCABEZADO (logo CPC) -->
   <header>
     <span class="logo-cpc">
       <img src="logo-cpc.png" alt="Logo del Centro Provincial de Cine de Matanzas" width="120" height="52">
@@ -159,144 +140,175 @@
     <p>Ciudad de Matanzas · Cuba</p>
   </header>
 
-  <!-- TÍTULO -->
   <section class="titulo">
-    <h2>🎬 Cartelera · Julio 2026</h2>
+    <h2>🎬 Cartelera · Agosto 2026</h2>
     <p class="lema">Cine para la comunidad: reflexión, identidad y cultura</p>
-    <p class="fechas"> Del 21 al 26 de julio</p>
+    <p class="fechas">Del 5 al 12 de agosto</p>
   </section>
 
-  <!-- PROGRAMACIÓN -->
   <main class="grid">
 
-    <!-- MARTES 21 -->
+    <!-- MIÉRCOLES 5 -->
     <article class="card">
       <div class="poster">
-        <span class="emoji">🎈</span><span class="ptxt">CARTEL · LILO &amp; STITCH</span>
-        <img class="poster-img" src="cartel-lilo-stitch.jpg" alt="Cartel de la película Lilo y Stitch" width="480" height="720" loading="lazy" decoding="async" onerror="this.style.display='none'">
+        <span class="emoji">🇨🇺</span><span class="ptxt">CINE CUBANO Y ANIMADOS</span>
       </div>
       <div class="body">
-        <div class="meta"><span class="day">Mar 21</span><span class="aud">🧒 Infantil</span></div>
-        <h3>Matiné de Verano</h3>
-        <ul class="facts">
-          <li><span class="ic">🕙</span><span><b>10:00 AM</b></span></li>
-          <li><span class="ic">📍</span><span>Sala de Video del Centro Provincial de Cine</span></li>
-          <li><span class="ic">🧭</span><span>La Merced y San Ignacio, Pueblo Nuevo</span></li>
-        </ul>
-        <p class="desc">Animados variados. Filme: <strong>Lilo &amp; Stitch</strong>.</p>
-      </div>
-    </article>
-
-    <!-- MIÉRCOLES 22 -->
-    <article class="card alt">
-      <div class="poster">
-        <span class="emoji">🎞️</span><span class="ptxt">CARTEL · NORA (Cuba)</span>
-        <img class="poster-img" src="cartel-nora.jpg" alt="Cartel de la película cubana Nora" width="480" height="720" loading="lazy" decoding="async" onerror="this.style.display='none'">
-      </div>
-      <div class="body">
-        <div class="meta"><span class="day">Mié 22</span><span class="aud">👥 Jóvenes y adultos</span></div>
+        <div class="meta"><span class="day">Mié 5</span><span class="aud">👥 Población general</span></div>
         <h3>Cine Móvil</h3>
         <ul class="facts">
           <li><span class="ic">🕗</span><span><b>8:00 PM</b></span></li>
-          <li><span class="ic">📍</span><span>Combinado de San Hipólito</span></li>
-          <li><span class="ic">🧭</span><span>Arrechabaleta, Versalles</span></li>
+          <li><span class="ic">📍</span><span>Reparto El Cocal</span></li>
+          <li><span class="ic">🧭</span><span>Playa, Reparto El Cocal</span></li>
         </ul>
-        <p class="desc">Proyección del filme cubano <strong>Nora</strong>.</p>
+        <p class="desc">Proyección de filmes y animados cubanos.</p>
       </div>
     </article>
 
-    <!-- JUEVES 23 -->
-    <article class="card">
-      <div class="poster">
-        <span class="emoji">🎸</span><span class="ptxt">CARTEL · COCO</span>
-        <img class="poster-img" src="cartel-coco.jpg" alt="Cartel de la película Coco" width="480" height="720" loading="lazy" decoding="async" onerror="this.style.display='none'">
-      </div>
-      <div class="body">
-        <div class="meta"><span class="day">Jue 23</span><span class="aud">🧒 Niños y jóvenes</span></div>
-        <h3>Fiesta Audiovisual</h3>
-        <ul class="facts">
-          <li><span class="ic">🕕</span><span><b>6:00 PM</b></span></li>
-          <li><span class="ic">📍</span><span>Sala de Video Charlie Chaplin</span></li>
-          <li><span class="ic">🧭</span><span>San Diego, esq. Santa Rita, Pueblo Nuevo</span></li>
-        </ul>
-        <p class="desc">Proyección del filme <strong>Coco</strong> y videoclips musicales.</p>
-      </div>
-    </article>
-
-    <!-- VIERNES 24 (sin cartel: respaldo visual) -->
+    <!-- JUEVES 6 -->
     <article class="card alt">
       <div class="poster">
-        <span class="emoji">🎓</span><span class="ptxt">ACTIVIDAD ESPECIAL</span>
+        <span class="emoji">🥋</span><span class="ptxt">CARTEL · MORTAL KOMBAT</span>
+        <img class="poster-img" src="cartel-mortal-kombat.jpg" alt="Cartel de la película Mortal Kombat" width="480" height="720" loading="lazy" decoding="async" onerror="this.style.display='none'">
       </div>
       <div class="body">
-        <div class="meta"><span class="day">Vie 24</span><span class="aud">🎒 Adolescentes</span></div>
+        <div class="meta"><span class="day">Jue 6</span><span class="aud">🎒 Adolescentes</span></div>
         <h3>Mirando el Futuro</h3>
         <ul class="facts">
           <li><span class="ic">🕑</span><span><b>2:00 PM</b></span></li>
           <li><span class="ic">📍</span><span>Escuela de Formación Integral</span></li>
           <li><span class="ic">🧭</span><span>La Jarcia, Reparto Camilo Cienfuegos</span></li>
         </ul>
-        <!-- EDITAR: ajusta esta descripción a la actividad real -->
-        <p class="desc">Espacio de reflexión y creación audiovisual para adolescentes.</p>
+        <p class="desc">Filme: <strong>Mortal Kombat</strong> (acción, EEUU, 2026).</p>
       </div>
     </article>
 
-    <!-- SÁBADO 25 (sin cartel: respaldo visual) -->
+    <!-- VIERNES 7 · MAÑANA -->
     <article class="card">
       <div class="poster">
-        <span class="emoji">🎬</span><span class="ptxt">CORTOS Y VIDEOCLIPS</span>
+        <span class="emoji">🦙</span><span class="ptxt">CARTEL · EL EMPERADOR Y SUS LOCURAS</span>
+        <img class="poster-img" src="cartel-las-locuras-del-emperador.jpg" alt="Cartel de El emperador y sus locuras" width="480" height="720" loading="lazy" decoding="async" onerror="this.style.display='none'">
       </div>
       <div class="body">
-        <div class="meta"><span class="day">Sáb 25</span><span class="aud">🧒 Niños y jóvenes</span></div>
+        <div class="meta"><span class="day">Vie 7</span><span class="aud">🧒 Niños y adolescentes</span></div>
+        <h3>Cine Infantil</h3>
+        <ul class="facts">
+          <li><span class="ic">🕙</span><span><b>10:00 AM</b></span></li>
+          <li><span class="ic">📍</span><span>Sala José White</span></li>
+          <li><span class="ic">🧭</span><span>Parque de la Libertad, Matanzas</span></li>
+        </ul>
+        <p class="desc"><strong>El emperador y sus locuras</strong> (I parte).</p>
+      </div>
+    </article>
+
+    <!-- VIERNES 7 · NOCHE -->
+    <article class="card alt">
+      <div class="poster">
+        <span class="emoji">🌺</span><span class="ptxt">CARTEL · MIEL PARA OSHUN</span>
+        <img class="poster-img" src="cartel-miel-para-oshun.jpg" alt="Cartel de la película cubana Miel para Oshun" width="480" height="720" loading="lazy" decoding="async" onerror="this.style.display='none'">
+      </div>
+      <div class="body">
+        <div class="meta"><span class="day">Vie 7</span><span class="aud">👥 Jóvenes y adultos</span></div>
+        <h3>Cine Comunitario · AfroAtenas</h3>
+        <ul class="facts">
+          <li><span class="ic">🕣</span><span><b>8:30 PM</b></span></li>
+          <li><span class="ic">📍</span><span>Callejón de las tradiciones</span></li>
+          <li><span class="ic">🧭</span><span>Calle 284 entre 117 y 119, Pueblo Nuevo</span></li>
+        </ul>
+        <p class="desc">Junto al Proyecto AfroAtenas. Filme cubano: <strong>Miel para Oshun</strong>.</p>
+      </div>
+    </article>
+
+    <!-- SÁBADO 8 · MAÑANA -->
+    <article class="card">
+      <div class="poster">
+        <span class="emoji">🎶</span><span class="ptxt">MÚSICA Y POESÍA</span>
+      </div>
+      <div class="body">
+        <div class="meta"><span class="day">Sáb 8</span><span class="aud">👥 Adultos</span></div>
+        <h3>Hoy como Ayer · El eco de la gruta</h3>
+        <ul class="facts">
+          <li><span class="ic">🕙</span><span><b>10:00 AM</b></span></li>
+          <li><span class="ic">📍</span><span>Sala de Video</span></li>
+          <li><span class="ic">🧭</span><span>Reparto Naranjal</span></li>
+        </ul>
+        <p class="desc">Música y poesía.</p>
+      </div>
+    </article>
+
+    <!-- SÁBADO 8 · TARDE -->
+    <article class="card alt">
+      <div class="poster">
+        <span class="emoji">🎬</span><span class="ptxt">DIBUJOS ANIMADOS</span>
+      </div>
+      <div class="body">
+        <div class="meta"><span class="day">Sáb 8</span><span class="aud">🧒 Niños y adolescentes</span></div>
         <h3>Fiesta Audiovisual</h3>
         <ul class="facts">
           <li><span class="ic">🕕</span><span><b>6:00 PM</b></span></li>
           <li><span class="ic">📍</span><span>Sala de Video Charlie Chaplin</span></li>
           <li><span class="ic">🧭</span><span>San Diego, esq. Santa Rita, Pueblo Nuevo</span></li>
         </ul>
-        <p class="desc">Proyección de cortometrajes y videoclips musicales.</p>
+        <p class="desc">Dibujos animados.</p>
       </div>
     </article>
 
-    <!-- DOMINGO 26 (reusa cartel de Nora) -->
-    <article class="card alt">
-      <div class="poster">
-        <span class="emoji">🎞️</span><span class="ptxt">CARTEL · NORA (Cuba)</span>
-        <img class="poster-img" src="cartel-nora.jpg" alt="Cartel de la película cubana Nora" width="480" height="720" loading="lazy" decoding="async" onerror="this.style.display='none'">
+    <!-- MARTES 11 (doble cartel: Fidel día 11 + Ciudad en Rojo) -->
+    <article class="card">
+      <div class="poster doble">
+        <span class="emoji">🎞️</span><span class="ptxt">MEMORIAS DE FIDEL + CIUDAD EN ROJO</span>
+        <img class="poster-img" src="cartel-fidel-11.jpg" alt="Cartel de Memorias de Fidel (martes 11)" width="480" height="720" loading="lazy" decoding="async" onerror="this.style.display='none'">
+        <img class="poster-img" src="cartel-ciudad-en-rojo.jpg" alt="Cartel de la película cubana Ciudad en Rojo" width="480" height="720" loading="lazy" decoding="async" onerror="this.style.display='none'">
       </div>
       <div class="body">
-        <div class="meta"><span class="day">Dom 26</span><span class="aud">👥 Jóvenes y adultos</span></div>
+        <div class="meta"><span class="day">Mar 11</span><span class="aud">👥 Población general</span></div>
         <h3>Cine Móvil</h3>
         <ul class="facts">
           <li><span class="ic">🕗</span><span><b>8:00 PM</b></span></li>
           <li><span class="ic">📍</span><span>Parque de la Iglesia de San Gerónimo</span></li>
           <li><span class="ic">🧭</span><span>Callejón de la Sacristía, Pueblo Nuevo</span></li>
         </ul>
-        <p class="desc">Proyección del filme cubano <strong>Nora</strong>.</p>
+        <p class="desc">Documentales <strong>Memorias de Fidel</strong>. Filme cubano: <strong>Ciudad en Rojo</strong>.</p>
+      </div>
+    </article>
+
+    <!-- MIÉRCOLES 12 (doble cartel: Fidel día 12 + Nora) -->
+    <article class="card alt">
+      <div class="poster doble">
+        <span class="emoji">🎞️</span><span class="ptxt">MEMORIAS DE FIDEL + NORA</span>
+        <img class="poster-img" src="cartel-fidel-12.jpg" alt="Cartel de Memorias de Fidel (miércoles 12)" width="480" height="720" loading="lazy" decoding="async" onerror="this.style.display='none'">
+        <img class="poster-img" src="cartel-nora.jpg" alt="Cartel de la película cubana Nora" width="480" height="720" loading="lazy" decoding="async" onerror="this.style.display='none'">
+      </div>
+      <div class="body">
+        <div class="meta"><span class="day">Mié 12</span><span class="aud">👥 Población general</span></div>
+        <h3>Cine Móvil</h3>
+        <ul class="facts">
+          <li><span class="ic">🕗</span><span><b>8:00 PM</b></span></li>
+          <li><span class="ic">📍</span><span>Plazoleta</span></li>
+          <li><span class="ic">🧭</span><span>Reparto Naranjal</span></li>
+        </ul>
+        <p class="desc">Documentales <strong>Memorias de Fidel</strong>. Filme cubano: <strong>Nora</strong>.</p>
       </div>
     </article>
 
   </main>
 
-  <!-- INFO PRÁCTICA (sin precios) -->
   <section class="info">
     <h3>📌 Información práctica</h3>
     <div class="info-grid">
-      <div class="info-item"><h4>📍 Sedes</h4><p>Centro Provincial de Cine y barrios de Pueblo Nuevo, Versalles y La Jarcia.</p></div>
+      <div class="info-item"><h4>📍 Sedes</h4><p>El Cocal, Naranjal, Pueblo Nuevo, La Jarcia y Sala José White, en Matanzas.</p></div>
       <div class="info-item"><h4>📞 Contacto</h4><p>📱 +53 XXX XXX XXX<br>🌐 <a href="https://www.facebook.com/CineMatanzasConecta" target="_blank" rel="noopener">Cine Matanzas Conecta</a></p></div>
       <div class="info-item"><h4>🌦️ Clima</h4><p>Las funciones al aire libre pueden cambiar de sede según el tiempo. Consulta nuestras redes.</p></div>
       <div class="info-item"><h4>🤝 Cine comunitario</h4><p>Un proyecto para llevar el cine a cada barrio y fortalecer la identidad cultural matancera.</p></div>
     </div>
   </section>
 
-  <!-- ACCIONES (sin JS) -->
   <div class="acciones">
     <a class="btn btn-fb" href="https://www.facebook.com/CineMatanzasConecta" target="_blank" rel="noopener">📘 Síguenos</a>
-    <a class="btn btn-wa" href="https://wa.me/?text=%F0%9F%8E%AC%20Cartelera%20del%20Centro%20Provincial%20de%20Cine%20de%20Matanzas%20%C2%B7%2021%E2%80%9326%20jul%202026.%20M%C3%A1s%20info%3A%20https%3A%2F%2Fdevilliamtz.github.io%2Fcartelera-cine-matanzas%2F" target="_blank" rel="noopener">📲 Compartir</a>
+    <a class="btn btn-wa" href="https://wa.me/?text=%F0%9F%8E%AC%20Cartelera%20del%20Centro%20Provincial%20de%20Cine%20de%20Matanzas%20%C2%B7%205%E2%80%9312%20ago%202026.%20M%C3%A1s%20info%3A%20https%3A%2F%2Fdevilliamtz.github.io%2Fcartelera-cine-matanzas%2F" target="_blank" rel="noopener">📲 Compartir</a>
     <a class="btn btn-ta" href="https://wa.me/?text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20los%20talleres%20de%20cine%20comunitario." target="_blank" rel="noopener">🎓 Talleres</a>
   </div>
 
-  <!-- PIE (logo CMC, SVG inline) -->
   <footer>
     <span class="logo-cmc" role="img" aria-label="Cine Matanzas Conecta">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
